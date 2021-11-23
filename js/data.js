@@ -114,10 +114,26 @@ const cards = [
 ];
 
 
-//load all cards in array
+// load all cards in array
 cards.forEach((card) => addCard(card));
 
+// on change select filter
+const cardFilter = document.getElementById('type-filter');
 
+cardFilter.addEventListener('change', function(){
+
+	// clear card container
+	document.querySelector('main .container').innerHTML = '';
+
+	// IF all add all cards ELSE create a filtered array and add cards
+	if (this.value == 'all'){
+		cards.forEach((card) => addCard(card));
+	} else {
+		const filterCard = cards.filter(card => card.type == this.value);
+		filterCard.forEach((card) => addCard(card));
+	}
+
+});
 
 
 // ***** functions *****
