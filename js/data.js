@@ -150,9 +150,27 @@ function addCard(card) {
 	<i class="${card.family} ${card.prefix + card.name}"></i>
     <h4>${card.name}</h4>
 	`;
-	cardBox.style.color = card.color;
+	// cardBox.style.color = card.color;
+	
+	//random card color
+	cardBox.style.color = rndColor();
 
 	// append new card to the container
 	cardContainer.appendChild(cardBox);
+
+}
+
+
+// random color generator
+function rndColor() {
+
+	const valueString = '0123456789ABCDEF';
+	let color = '#';
+
+	for (let i = 0; i < 6; i++) {
+		color += valueString[Math.floor(Math.random() * 16)];
+	}
+
+	return color;
 
 }
