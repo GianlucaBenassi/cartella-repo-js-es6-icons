@@ -11,7 +11,8 @@
 
 .header-top {
     color: #29b1dd;
-    padding: 20px 0 5px 20px;
+    height: 50px;
+    padding: 15px 0 0 10px;
 }
 
 header nav {
@@ -19,21 +20,21 @@ header nav {
     color: white;
     text-align: center;
     text-transform: uppercase;
-    padding: 20px 0;
+    height: 50px;
+    line-height: 50px;
 }
 
 /* ***** main ***** */
 
 main {
     background-color: #dddddd;
+    min-height: calc(100vh - 100px);
 }
 
 .container {
-    padding: 20px;
-
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: space-around;
 }
 
 .card {
@@ -42,6 +43,7 @@ main {
     height: 100px;
     border-radius: 10px;
     box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.7);
+    margin: 30px;
     
     display: flex;
     flex-direction: column;
