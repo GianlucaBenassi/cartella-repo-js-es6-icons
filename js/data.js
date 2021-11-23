@@ -1,4 +1,4 @@
-[
+const cards = [
 	{
 		name: 'cat',
 		prefix: 'fa-',
@@ -112,3 +112,25 @@
 		color: 'blue'
 	}
 ];
+
+
+//load all cards in array
+cards.forEach((card) => addCard(card));
+
+
+
+
+// ***** functions *****
+
+function addCard(card) {
+
+	const cardContainer = document.querySelector('main .container');
+
+	cardContainer.innerHTML += `
+	<div class="card">
+        <i class="${card.family} ${card.prefix + card.name}"></i>
+        <h4>${card.name}</h4>
+    </div>
+	`
+
+}
