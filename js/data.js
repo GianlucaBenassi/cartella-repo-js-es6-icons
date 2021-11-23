@@ -124,13 +124,19 @@ cards.forEach((card) => addCard(card));
 
 function addCard(card) {
 
+	// get card container
 	const cardContainer = document.querySelector('main .container');
 
-	cardContainer.innerHTML += `
-	<div class="card">
-        <i class="${card.family} ${card.prefix + card.name}"></i>
-        <h4>${card.name}</h4>
-    </div>
-	`
+	// create card
+	const cardBox = document.createElement('div');
+	cardBox.classList.add('card');
+	cardBox.innerHTML = `
+	<i class="${card.family} ${card.prefix + card.name}"></i>
+    <h4>${card.name}</h4>
+	`;
+	cardBox.style.color = card.color;
+
+	// append new card to the container
+	cardContainer.appendChild(cardBox);
 
 }
