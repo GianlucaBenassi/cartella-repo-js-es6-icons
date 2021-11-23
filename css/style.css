@@ -24,6 +24,10 @@ header nav {
     line-height: 50px;
 }
 
+#type-filter {
+    text-transform: capitalize;
+}
+
 /* ***** main ***** */
 
 main {

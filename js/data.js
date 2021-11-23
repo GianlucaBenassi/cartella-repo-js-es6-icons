@@ -117,6 +117,16 @@ const cards = [
 // load all cards in array
 cards.forEach((card) => addCard(card));
 
+
+
+// load select filter
+let cardTypes = cards.map((card => card.type));
+cardTypes = delArrDuplicates(cardTypes);
+cardTypes.unshift('all');
+
+cardTypes.forEach((type) => addFilter(type));
+
+
 // on change select filter
 const cardFilter = document.getElementById('type-filter');
 
@@ -138,6 +148,7 @@ cardFilter.addEventListener('change', function(){
 
 // ***** functions *****
 
+// add one card
 function addCard(card) {
 
 	// get card container
@@ -161,6 +172,20 @@ function addCard(card) {
 }
 
 
+// add one filter
+function addFilter(type) {
+	
+	// get filter container
+	const filterContainer = document.getElementById('type-filter');
+	
+	// add option
+	filterContainer.innerHTML += `
+	<option value="${type}">${type}</option>
+	`
+
+}
+
+
 // random color generator
 function rndColor() {
 
@@ -172,5 +197,21 @@ function rndColor() {
 	}
 
 	return color;
+
+}
+
+
+// delete duplicate elements in array
+function delArrDuplicates (arr) {
+	
+	const uniqueArr = [];
+
+	arr.forEach(element => {
+		if (!uniqueArr.includes(element)) {
+			uniqueArr.push(element);
+		}
+	});
+
+	return uniqueArr;
 
 }
