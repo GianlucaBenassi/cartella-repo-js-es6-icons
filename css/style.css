@@ -5,3 +5,21 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+
+/* ***** header ***** */
+
+.header-top {
+    color: #29b1dd;
+    padding: 20px 0 5px 20px;
+}
+
+header nav {
+    background-color: #29b1dd;
+    color: white;
+    text-align: center;
+    text-transform: uppercase;
+    padding: 20px 0;
+}
+
+/* ***** main ***** */
